@@ -1,9 +1,7 @@
-// global variables
-// __dirname - path to current directory
-// __filename - file name
-// require - function to use modules (CommonJS)
-// module - info about current module (file)
-// process - info about environment where the program is being executed
-console.log(__dirname);
-console.log(__filename);
-console.log(process);
+// CommonJS, every file is module (by default)
+// Modules - Encapsulated code
+
+const { john, peter } = require("./4-names");
+const sayHi = require("./5-utils");
+
+sayHi(john);
