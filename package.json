@@ -1,0 +1,25 @@
+{
+  "name": "nodejsprojects",
+  "version": "1.0.0",
+  "description": "",
+  "main": "/nodejs-projects/basics/app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mk975025/nodejs-projects.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mk975025/nodejs-projects/issues"
+  },
+  "homepage": "https://github.com/mk975025/nodejs-projects#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
