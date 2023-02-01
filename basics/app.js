@@ -1,27 +1,18 @@
-const { readFile, writeFile } = require("fs");
+// npm - global command that comes pre installed with node
+// npm --version
 
-readFile("./content/subfolder/first.txt", "utf-8", function (err, result) {
-  if (err) {
-    console.log("Something went wrong! " + err.message);
-    return;
-  }
-  const first = result;
-  readFile("./content/subfolder/second.txt", "utf-8", (err, result) => {
-    if (err) {
-      console.log("Something went wrong! " + err.message);
-      return;
-    }
-    const second = result;
-    writeFile(
-      "./content/subfolder/result-async.txt",
-      `Here is the result: ${first}, ${second}`,
-      function (err, result) {
-        if (err) {
-          console.log(err.message);
-          return;
-        }
-        console.log(result);
-      }
-    );
-  });
-});
+// local dependency - use it only in this particular project
+// npm i <packageName>
+
+// global dependency - use it in any project
+// npm install -g <packageName>
+
+// package.json - stores important info about project/package, stores dependency information
+// manual approach (create package.json in the root, create properties)
+// npm init (step by step, press enter to skip)
+// npm init -y (everything default)
+
+const _ = require("lodash");
+const items = [1, [2, [3, [4]]]];
+const flatItems = _.flattenDeep(items);
+console.log(flatItems);
