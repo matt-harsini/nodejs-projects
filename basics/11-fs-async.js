@@ -1,5 +1,5 @@
 const { readFile, writeFile } = require("fs");
-
+// callback hell
 readFile("./content/subfolder/first.txt", "utf-8", function (err, result) {
   if (err) {
     console.log("Something went wrong! " + err.message);
