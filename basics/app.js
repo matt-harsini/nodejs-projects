@@ -1,23 +1,59 @@
-// npm - global command that comes pre installed with node
-// npm --version
+const { readFile, writeFile } = require("fs").promises;
+// const util = require("util");
+// const readFilePromise = util.promisify(readFile);
+// const writeFilePromise = util.promisify(writeFile);
 
-// local dependency - use it only in this particular project
-// npm i <packageName>
+async function start() {
+  try {
+    const first = await readFile(
+      "./basics/content/subfolder/first.txt",
+      "utf-8"
+    );
+    const second = await readFile(
+      "./basics/content/subfolder/second.txt",
+      "utf-8"
+    );
+    await writeFile(
+      "./basics/content/subfolder/result-mind-grenade.txt",
+      `This is awesome!!!`
+    );
+    console.log(first, second);
+  } catch (err) {
+    console.log("Error occured");
+    console.log(err.message);
+  }
+}
 
-// global dependency - use it in any project
-// npm install -g <packageName>
+start();
 
-// package.json - stores important info about project/package, stores dependency information
-// manual approach (create package.json in the root, create properties)
-// npm init (step by step, press enter to skip)
-// npm init -y (everything default)
+// function getText(path) {
+//   return new Promise((resolve, reject) => {
+//     readFile(path, "utf-8", (err, data) => {
+//       if (err) {
+//         reject(err);
+//       } else {
+//         resolve(data);
+//       }
+//     });
+//   });
+// }
 
-// package-lock.json
-// some dependencies have dependencies on their own, have those dependencies have versions as well
-// package-lock.json contains all the information/versions about the packages each dependency depends on
-// example: bootstrap requires jquery so that dependency tree/info is stored there
+// experiments
+// console.log("Prmoise start");
+// const lotteryPromise = new Promise(function (resolve, reject) {
+//   console.log("Hello from inside of the promise");
 
-const _ = require("lodash");
-const items = [1, [2, [3, [4]]]];
-const flatItems = _.flattenDeep(items);
-console.log(flatItems);
+//   // Web API
+//   setTimeout(() => console.log("From Web API"), 0);
+
+//   resolve("Resolved");
+// });
+
+// lotteryPromise
+//   .then((res) => console.log(res))
+//   .catch((err) => console.error(err));
+// console.log("Promise end");
+
+// const x = fetch("https://dummyjson.com/products/1");
+// console.log(x);
+// x.then((res) => console.log(res));
