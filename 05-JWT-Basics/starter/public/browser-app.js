@@ -36,6 +36,7 @@ formDOM.addEventListener('submit', async (e) => {
     tokenDOM.textContent = 'no token present'
     tokenDOM.classList.remove('text-success')
   }
+  
   setTimeout(() => {
     formAlertDOM.style.display = 'none'
   }, 2000)
